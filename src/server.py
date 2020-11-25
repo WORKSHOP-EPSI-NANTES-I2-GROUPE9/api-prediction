@@ -1,11 +1,17 @@
 from flask import Flask, request, jsonify
 from tensorflow import keras
+import pickle
 
 server = Flask(__name__)
 
 # Load model
-tokenizer = keras.preprocessing.text.Tokenizer()
 model = keras.models.load_model('model.h5')
+
+# Load tokenizer
+with open('tokenizer.pkl', 'rb') as handle:
+    tokenizer = pickle.load(handle)
+
+# Set some parameters
 SEQUENCE_LENGTH = 300
 SENTIMENT_THRESHOLDS = (0.4, 0.7)
 
