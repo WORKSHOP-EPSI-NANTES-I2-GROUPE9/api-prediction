@@ -7,8 +7,12 @@
 
 ## Prerequisites
 
-- Add a model file (.h5) into /src/
-- Add a tokenizer file into /src/
+Add environment variables
+
+| Name | Description |
+| -- | -- |
+| URL_MODEL | model file (.h5) path |
+| URL_MODEL | tokenizer file path |
 
 ## Run
 
