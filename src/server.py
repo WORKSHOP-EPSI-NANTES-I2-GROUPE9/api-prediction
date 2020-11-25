@@ -5,7 +5,7 @@ server = Flask(__name__)
 
 # Load model
 tokenizer = keras.preprocessing.text.Tokenizer()
-model = keras.models.load_model('model-v1.h5')
+model = keras.models.load_model('model.h5')
 SEQUENCE_LENGTH = 300
 SENTIMENT_THRESHOLDS = (0.4, 0.7)
 
