@@ -5,10 +5,28 @@
 
 > predicts whether a sentence is negative or not
 
-## Usage
+## Run
 
+Before, try to add a model file into /src/
 ```sh
 python ./server.py
+```
+
+try something like this to test api
+```sh
+curl -i -X POST -H "Content-Type: application/json" -d "{\"message\":\"hello bob, how are you?\"}" http://localhost:5000/api/v1/analyses
+```
+
+## Docker
+
+Build image
+```sh
+docker build -t api-prediction .
+```
+
+Run image
+```sh
+docker run -i --rm -p 5000:5000 api-prediction
 ```
 
 ## Show your support
