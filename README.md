@@ -5,9 +5,13 @@
 
 > predicts whether a sentence is negative or not
 
+## Prerequisites
+
+- Add a model file (.h5) into /src/
+- Add a tokenizer file into /src/
+
 ## Run
 
-Before, try to add a model file into /src/
 ```sh
 python ./server.py
 ```
