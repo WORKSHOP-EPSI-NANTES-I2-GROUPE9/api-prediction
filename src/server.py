@@ -27,7 +27,7 @@ def predict(text):
     x_test = keras.preprocessing.sequence.pad_sequences(tokenizer.texts_to_sequences([text]), maxlen=SEQUENCE_LENGTH)
     score = model.predict([x_test])[0]
     label = decode_sentiment(score)
-    return {"label": label, "percentage": float(score)}
+    return {"label": label, "score": float(score) * 100}
 
 @server.route('/api/v1/analyses', methods = ['POST'])
 def analyses():
