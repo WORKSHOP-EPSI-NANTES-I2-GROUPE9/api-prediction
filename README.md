@@ -11,9 +11,9 @@ Add environment variables
 
 | Name | Description |
 | -- | -- |
-| PORT | server expose port |
+| PORT | server port |
 | URL_MODEL | model file (.h5) path |
-| URL_MODEL | tokenizer file path |
+| URL_TOKENIZER | tokenizer file path |
 
 ## Run
 
