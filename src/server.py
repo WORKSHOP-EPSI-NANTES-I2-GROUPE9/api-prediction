@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
 from tensorflow import keras
 import pickle
 import requests
@@ -6,6 +7,10 @@ import os
 import time
 
 server = Flask(__name__)
+
+# Config cors
+cors = CORS(server, resources={r"/api/v1/*": {"origins": "*"}})
+server.config['CORS_HEADERS'] = 'Content-Type'
 
 # Download model
 modelFileUrl = os.environ.get('URL_MODEL')
@@ -44,6 +49,7 @@ def predict(text):
     return {"label": label, "score": float(score) * 100, "treatment_time": time.time()-start_at}
 
 @server.route('/api/v1/analyses', methods = ['POST'])
+@cross_origin()
 def analyses():
     content = request.get_json(silent=True)
 
